@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/KnockoutDemo/bin
+/KnockoutDemo/obj/Debug
+/KnockoutDemo.v12.suo
