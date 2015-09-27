@@ -9,10 +9,5 @@
         {
             return View();
         }
-
-        public ActionResult Slides()
-        {
-            return View();
-        }
     }
 }

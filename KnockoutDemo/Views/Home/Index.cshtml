@@ -8,11 +8,44 @@
 
 <html>
 <head>
-    <title>Home</title>
+    <title>Slides</title>
 </head>
 <body>
-<div>
-    <a href="@Url.Action("Slides")">Manage Slides</a>
-</div>
+    <div>
+        <h1>Create a new Slide</h1>
+        <span>Provider:</span>
+        <input id="Provider" type="text" data-bind="value: Slide.Provider" />
+        <br />
+        <span>Reference Number:</span>
+        <input id="ReferenceNumber" type="text" data-bind="value: Slide.ReferenceNumber" />
+        <br />
+        <span>Slide Type:</span>
+        <input id="SlideType" type="text" data-bind="value: Slide.SlideType" />
+        <br />
+        <span>Date From:</span>
+        <input id="From" type="text" data-bind="value: Slide.From" />
+        <br />
+        <span>Date To:</span>
+        <input id="To" type="text" data-bind="value: Slide.To" />
+        <br />
+        <br />
+        <input type="button" value="Add Slide" data-bind="click: addSlide" />
+        <p>Change some values and hit the button to post to the web api endpoint.</p>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/knockout")
+    <script src="~/Scripts/App.js"></script>
+    <script src="~/Models/Slide.js"></script>
+    <script src="~/ViewModels/SlideViewModel.js"></script>
+
+    <script type="text/javascript">
+    $(function() {
+        var viewmodel = new knockoutDemo.SlideViewModel();
+
+        ko.applyBindings(viewmodel);
+    });
+    </script>
+
 </body>
 </html>

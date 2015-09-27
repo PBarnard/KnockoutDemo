@@ -1,4 +1,4 @@
-﻿namespace KnockoutDemo.Models
+﻿namespace Domain.Types
 {
     using System;
 

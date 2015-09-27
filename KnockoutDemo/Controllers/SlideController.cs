@@ -4,7 +4,7 @@
     using System.Net;
     using System.Net.Http;
     using System.Web.Http;
-    using Models;
+    using Domain.Types;
 
     public class SlideController : ApiController
     {
@@ -34,15 +34,14 @@
 
         public HttpResponseMessage Post(Slide slide)
         {
-            //// Update Slide here
+            if (ModelState.IsValid)
+            {
+                // Do something with the slide.
 
-            var response = Request.CreateResponse(HttpStatusCode.Created, slide);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
 
-            var uri = Url.Link("DefaultApi", new { id = slide.Id });
-
-            response.Headers.Location = new Uri(uri);
-
-            return response;
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
         }
     }
 }
